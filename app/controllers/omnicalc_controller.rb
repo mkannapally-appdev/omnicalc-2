@@ -6,7 +6,6 @@ class OmnicalcController < ApplicationController
   def wizard_add
     @first_num = params.fetch("first_num").to_f
     @second_num = params.fetch("second_num").to_f
-    
     @addition = @first_num + @second_num
 
     render({:template => "omnicalc/wizard_add.html.erb"})
@@ -14,6 +13,14 @@ class OmnicalcController < ApplicationController
 
   def subtract
     render({:template => "omnicalc/subtract.html.erb"})
+  end
+
+  def wizard_subtract
+    @first_num = params.fetch("first_num").to_f
+    @second_num = params.fetch("second_num").to_f
+    @subtract_result = @first_num - @second_num
+
+    render({:template => "omnicalc/wizard_subtract.html.erb"})
   end
 
   def multiply
