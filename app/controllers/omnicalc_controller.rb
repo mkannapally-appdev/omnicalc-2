@@ -27,8 +27,25 @@ class OmnicalcController < ApplicationController
     render({:template => "omnicalc/multiply.html.erb"})
   end
 
+  def wizard_multiply
+    @first_num = params.fetch("first_num").to_f
+    @second_num = params.fetch("second_num").to_f
+    @multiply_result = @first_num * @second_num
+
+    render({:template => "omnicalc/wizard_multiply.html.erb"})
+  end
+
   def divide
     render({:template => "omnicalc/divide.html.erb"})
   end
+
+  def wizard_divide
+    @first_num = params.fetch("first_num").to_f
+    @second_num = params.fetch("second_num").to_f
+    @divide_result = @first_num / @second_num
+    
+    render({:template => "omnicalc/wizard_divide.html.erb"})
+  end
+
 
 end
